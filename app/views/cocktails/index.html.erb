@@ -1,17 +1,29 @@
+<div class="container">
+  <div class="row">
 
-<div class="row">
-  <% @cocktails.each do |cocktail| %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="card">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
 
-      <%= image_tag "one_cocktail.jpg", class: "img-thumbnail" %>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <div class="cocktails">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        <div class="cocktail-card">
+          <%= image_tag "#{cocktail.photo}" %>
+        </div>
+        <div class="cocktail-ingredients">
+          <% cocktail.doses.each do |dose| %>
+          <%= dose.description %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
-<div>
+<div class="create-cocktail-btn">
   <p><%= link_to 'Create new Cocktail', new_cocktail_path, class: "btn btn-primary" %></p>
 
 </div>
+
+

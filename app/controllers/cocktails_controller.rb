@@ -4,6 +4,7 @@ class CocktailsController < ApplicationController
   end
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
   end
 
   def new
