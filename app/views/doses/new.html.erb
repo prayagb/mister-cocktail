@@ -1,0 +1,8 @@
+<h1>Add Ingredients to cocktail <%= @cocktail %> </h1>
+
+<%= form_for(@dose) do |f| %>
+  <%= f.text_field :description %>
+  <%= f.integer_field :cocktail_id %>
+  <%= f.integer_field :ingredient_id %>
+  <%= f.submit "Add" %>
+<% end %>

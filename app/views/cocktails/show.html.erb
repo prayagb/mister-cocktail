@@ -1,0 +1,12 @@
+<h1><%= @cocktail.name %></h1>
+
+<% @cocktail.doses.each do |dose| %>
+<%= image_tag "one_cocktail.jpg" %>
+<%= dose.description %> <%= dose.ingredient.name %>
+<% end %>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.input :description %>
+<%= f.input :ingredient_id, collection: Ingredient.all %>
+<%= f.submit %>
+<% end %>

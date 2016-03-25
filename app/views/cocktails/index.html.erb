@@ -1,0 +1,17 @@
+
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="card">
+
+      <%= image_tag "one_cocktail.jpg", class: "img-thumbnail" %>
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div>
+  <p><%= link_to 'Create new Cocktail', new_cocktail_path, class: "btn btn-primary" %></p>
+
+</div>
